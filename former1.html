@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function validateForm() {
+    var x = document.forms["myForm"]["email"].value;
+    var n=x.search(".com");
+    var m=x.search("@");   
+    if ((n == "-1") || (m =="-1")) {
+        alert("Please fill out a valid e-mail address");
+        return false;
+    }
+}
+</script>
+</head>
+<body>
+
+<form name="myForm" onsubmit="return validateForm()">
+  <fieldset>
+    <legend>Personal information:</legend>
+    First name:<br>
+    <input type="text" name="firstname" >
+    <br>
+    Last name:<br>
+    <input type="text" name="lastname">
+    <br>
+ Gender:<br>
+   <input type="radio" name="gender" value="male" > Male<br>
+   <input type="radio" name="gender" value="female"> Female<br>
+   <input type="radio" name="gender" value="other"> Other<br>
+Date of birth:<br>
+  <input type="text" name="dob">
+<br> 
+</fieldset>
+<fieldset>
+<legend>Contact Details</legend>
+Contact Number:<br>
+<input type="text" name="contact_number">
+<br>
+Email ID:<br>
+<input type="text" name="email">
+<br>
+Adress of communication:<br>
+<input type="text" name="address">
+<br>
+</fieldset>   
+<fieldset>
+<input type="checkbox" name="declaration" required>I acknowledge the information i gave<br>
+<input type="submit">
+</form>
+</body>
+</html>
+
